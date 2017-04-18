@@ -5,8 +5,7 @@ $(document).ready(function() {
   $('#time-form').submit(function(time) {
     event.preventDefault();
     var input = $('#time').val();
-    var output = simpleAlarmClock.alarmClock(input);
-    window.alert(output);
+    simpleAlarmClock.alarmClock(input);
   });
   $('#current-time-form').submit(function() {
     event.preventDefault();

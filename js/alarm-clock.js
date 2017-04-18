@@ -2,8 +2,14 @@ AlarmClock = function() {
 };
 
 AlarmClock.prototype.alarmClock = function(time) {
-  return moment(time, "HH:mm").format("hh:mm a");
+  if (moment(time, "HH:mm").diff(moment()) <= 0) {
+    window.alert("Alarm Triggered");
+    return;
+  } else {
+    setTimeout(arguments.callee, 1000, time);
+  }
 };
+
 
 AlarmClock.prototype.currentTime = function() {
   return moment().format("hh:mm a");
